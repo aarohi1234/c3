@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h3>Sign Up</h3>
+      <a href="voucher.html">Purchase Voucher</a>
+    </div>
+    <div id="container">
+   
+  <form id="form" onsubmit="store(event)"/>
+  <input id="email" type="text" placeholder="Email"/>
+  <input id="address" type="text" placeholder="Address"/>
+  <input id="amount" type="text" placeholder="Amount"/>
+  <input type="submit"/>
+
+</form> 
+</div>
+  </body>
+</html>
+<script>
+function data(n,e,a,am){
+  this.name=n;
+  this.email=e;
+  this.address=a;
+  this.amount=am;
+}
+
+
+
+  var sabdata=JSON.parse(localStorage.getItem("user"))||[];
+  function store(event){
+    event.preventDefault()
+  var form=document.getElementById("form")
+  var name=form.name.value;
+  var email=form.email.value;
+  var address=form.address.value;
+  var amount=form.amount.value;
+  var d=new data(name,email,address,amount)
+sabdata.push(d)
+localStorage.setItem("user",JSON.stringify(sabdata))
+  }
+  store(event);
+</script>

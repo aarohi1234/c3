@@ -1,0 +1,8 @@
+#voucher_list {
+    
+    margin: auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-gap: 20px;
+}
